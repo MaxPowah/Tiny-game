@@ -15,15 +15,20 @@ public class userInput : MonoBehaviour
 
     }
     void Update() {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Input.mousePosition;
+        //Debug.Log(mousePos);
         if (Input.GetMouseButtonDown(0))
         {
+            
             Collider2D targetObject = Physics2D.OverlapPoint(mousePos);
             if(targetObject){
+                Debug.Log("selected the sword");
                 selectedObject = sword.transform.gameObject.GetComponent<Rigidbody2D>();
                 offset = sword.transform.position - mousePos;
 
             }
+            else
+                Debug.Log("missed");
         }
         if (Input.GetMouseButtonUp(0) && selectedObject)
         {
