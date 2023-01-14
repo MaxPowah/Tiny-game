@@ -17,8 +17,8 @@ public class swordController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rotateSpeed = swordRb.velocity.x * modifier;    //!looking for a different way to define velocity, think i should have a dynamic rigidboudy and then measure v as s/t
         swordTrans.Rotate(0, 0, rotateSpeed * Time.deltaTime);
-        rotateSpeed = swordRb.velocity.x * modifier;
         //swordRb.rotation += swordRb.velocity.x * rotateSpeed;
                 
     }

@@ -8,17 +8,25 @@ public class userInput : MonoBehaviour
     Rigidbody2D selectedObject;
     Vector3 mousePos;
     Vector3 offset;
+    private swordController swCtrl;
     
-    Vector2 pastPos;
-    Vector2 presentPos;
+    public Vector3 pastPos;
+    public Vector3 presentPos;
+    public float swVelocity;
 
     
     // Start is called before the first frame update
     void Start()
     {
-
+        swCtrl = sword.GetComponent<swordController>();
     }
     void Update() {
+        //* velocity stuff
+        //just like in physics class
+        swVelocity = ((swCtrl.swordTrans.position - pastPos).magnitude) / Time.deltaTime;
+        pastPos = swCtrl.swordTrans.position;
+        
+        //*mouse stuff
         mousePos = Input.mousePosition;
         //Debug.Log(mousePos);
         if (Input.GetMouseButtonDown(0))
@@ -40,13 +48,13 @@ public class userInput : MonoBehaviour
         }
     }
     void FixedUpdate()
-{
-    if (selectedObject)
     {
-        //selectedObject.velocity = new Vector2 ((mousePos.x + offset.x), (mousePos.y + offset.y));
-        pastPos = selectedObject.position;
-        selectedObject.MovePosition(mousePos + offset);
-        
+        if (selectedObject)
+        {
+            //selectedObject.velocity = new Vector2 ((mousePos.x + offset.x), (mousePos.y + offset.y));
+            selectedObject.MovePosition(mousePos + offset);
+            Debug.Log("past: " + pastPos + " present: " + presentPos);
+            
+        }
     }
-}
 }
