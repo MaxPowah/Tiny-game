@@ -5,7 +5,9 @@ using UnityEngine;
 public class swordController : MonoBehaviour
 {
     public float rotateSpeed;
+    public float modifier = 1f;
     public Rigidbody2D swordRb;
+    public Transform swordTrans;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +17,9 @@ public class swordController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(swordRb.velocity.x != 0)
-        {
-            swordRb.rotation += swordRb.velocity.x * rotateSpeed;
-        }
-        else
-        {
-            //swordRb.SetRotation(180);
-        }
-        
+        swordTrans.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+        rotateSpeed = swordRb.velocity.x * modifier;
+        //swordRb.rotation += swordRb.velocity.x * rotateSpeed;
+                
     }
 }

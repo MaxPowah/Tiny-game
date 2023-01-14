@@ -9,6 +9,10 @@ public class userInput : MonoBehaviour
     Vector3 mousePos;
     Vector3 offset;
     
+    Vector2 pastPos;
+    Vector2 presentPos;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +43,10 @@ public class userInput : MonoBehaviour
 {
     if (selectedObject)
     {
+        //selectedObject.velocity = new Vector2 ((mousePos.x + offset.x), (mousePos.y + offset.y));
+        pastPos = selectedObject.position;
         selectedObject.MovePosition(mousePos + offset);
+        
     }
 }
 }
