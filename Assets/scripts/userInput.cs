@@ -29,7 +29,7 @@ public class userInput : MonoBehaviour
         //*mouse stuff
         mousePos = Input.mousePosition;
         //Debug.Log(mousePos);
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             
             Collider2D targetObject = Physics2D.OverlapPoint(mousePos);
@@ -42,7 +42,7 @@ public class userInput : MonoBehaviour
             else
                 Debug.Log("missed");
         }
-        if (Input.GetMouseButtonUp(0) && selectedObject)
+        if (Input.GetMouseButton(0) && selectedObject)
         {
             selectedObject = null;
         }
