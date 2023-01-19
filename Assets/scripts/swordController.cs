@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class swordController : MonoBehaviour
 {
+    public Transform swordConnectedTo; // make this depend on mouse position
+    public Transform bladeNstuff;
+
+    LineRenderer lRender;
+
+    public List<SwordSection> allSwordSections = new List<SwordSection>();
+    /* 
+    !old but funny code
     public float rotateSpeed;
     public float modifier = 1f;
     public Rigidbody2D swordRb;
@@ -23,4 +31,5 @@ public class swordController : MonoBehaviour
         //swordRb.rotation += swordRb.velocity.x * rotateSpeed;
                 
     }
+    */
 }
