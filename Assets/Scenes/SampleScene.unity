@@ -322,6 +322,7 @@ RectTransform:
   m_Children:
   - {fileID: 2134193285}
   - {fileID: 1748666816}
+  - {fileID: 1872622733}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -830,8 +831,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1872622733}
+  m_Children: []
   m_Father: {fileID: 246374343}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -896,8 +896,8 @@ RectTransform:
   - {fileID: 489120459}
   - {fileID: 57628267}
   - {fileID: 637031936}
-  m_Father: {fileID: 1748666816}
-  m_RootOrder: 0
+  m_Father: {fileID: 246374343}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -975,10 +975,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5390463f7d3f3489d9a30264e0ff60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 0
-  modifier: 1
-  swordRb: {fileID: 1872622736}
-  swordTrans: {fileID: 1872622733}
+  whatTheRopeIsConnectedTo: {fileID: 1748666816}
+  whatIsHangingFromTheRope: {fileID: 57628267}
+  kRope: 40
+  dRope: 2
+  aRope: 0.05
+  mRopeSection: 0.2
 --- !u!1 &2134193284
 GameObject:
   m_ObjectHideFlags: 0

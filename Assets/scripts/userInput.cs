@@ -25,8 +25,8 @@ public class userInput : MonoBehaviour
     void Update() {
         //* velocity stuff
         //just like in physics class
-        swVelocity = ((swCtrl.swordTrans.position - pastPos).magnitude) / Time.deltaTime;
-        pastPos = swCtrl.swordTrans.position;
+        swVelocity = ((sword.transform.position - pastPos).magnitude) / Time.deltaTime;
+        pastPos = sword.transform.position;
         
         //*mouse stuff
         mousePos = Input.mousePosition;
